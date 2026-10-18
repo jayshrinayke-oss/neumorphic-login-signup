@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup | MetaSkillGroup</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <meta name="description" content="Responsive login and signup form for MetaSkillGroup.">
+    <meta name="keywords"  content="MetaSkillGroup, Login, Signup, Web Development">
+    <meta name="author"  content ="MetaSkillGroup">
+    <meta name="theme-color" content="#e8edf5">
+
+    <meta property="og:title" content="Login & Signup | MetaSkillGroup">
+    <meta property="og:description" content="Sign in or create your MetaSkillGroup account.">
+    <meta property="og:type" content="website">
+
+     <link rel="stylesheet"  href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="brand-logo">
+    <svg width="48" height="48" viewBox="0 0 48 48"
+         xmlns="http://www.w3.org/2000/svg" aria-label="MetaSkillGroup logo" role="img">
+        <rect x="4" y="4" width="40" height="40" rx="12" fill="#4285f4"/>
+        <path d="M14 32V16L24 26L34 16V32"
+              fill="none" stroke="#ffffff" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+        <h1>MetaSkillGroup</h1>
+        <p>Welcome back! Please sign in to continue.</p>
+
+        <div class="heading">
+        <button id="login-tab">Login</button>
+        <button id ="signup-tab">Signup</button>
+    </div>
+    <div class="forms-wrapper">
+
+    <form id="login-form">
+        <label for ="email">Email Address</label>
+        <input id ="email" type="email" placeholder="email">
+        <small class="error-message"></small>
+
+         <label for ="password">Password</label>
+         <div class="password-input-wrapper">
+        <input id ="password" type="password" placeholder="password">
+        <button type ="button" aria-label="show password">
+            <i class ="fa-solid fa-eye"></i>
+        </button> 
+         </div>
+         <small class="error-message"></small>
+        
+
+        <label for="remember">Remember me</label>
+        <input type ="checkbox" id="remember" >
+        <a href="#" id="forgot-password">Forgot Password?</a>
+        <button type="submit">Login</button>
+        
+        <div class="social-divider">
+            <span>or continue with</span>
+        </div>
+
+        <div class="social-button">
+            <button type ="button" aria-label="continue with Google">
+                <i class="fa-brands fa-google"></i>
+                Google
+            </button>
+
+            <button type="button" aria-label="continue with Github">
+                <i class ="fa-brands fa-github"></i>
+                Github
+            </button>
+        </div>
+
+        <p>Don't have an account?</p>
+<a href="#" id="signup-link">Sign up</a>
+      </form>
+
+      <form id="signup-form">
+        <label for="fullname">Full Name:</label>
+        <input id="fullname" type="text" placeholder="Enter full name">
+        <small class="error-message"></small>
+     
+        <label for="signup-email">Email Address:</label>
+        <input id ="signup-email" type="email" placeholder="Enter your email">
+        <small class="error-message"></small>
+
+
+       <label for="phone">Phone Number:</label>
+       <input id="phone" type="tel" placeholder="Enter your 10-digit phone number">
+       <small class="error-message"></small>
+
+        <label for="signup-password">Password:</label>
+        
+<div class="password-input-wrapper">
+    <input id="signup-password" type="password" placeholder="Create a password">
+    <button type="button" aria-label="Show password">
+        <i class="fa-solid fa-eye"></i>
+    </button>
+</div>
+<small class="error-message"></small>
+
+
+<div class ="password-strength">
+    <div class="strength-bar">
+        <div class="strength-fill"></div>
+    </div>
+    <small>Weak</small>
+</div>
+
+
+        <label for="confirm-password"> Confirm Password:</label>
+        <div class="password-input-wrapper">
+        <input id ="confirm-password" type="password" placeholder="Confirm your password">
+        <button type="button" aria-label="Show password">
+    <i class="fa-solid fa-eye"></i>
+</button>
+</div>
+        <small class="error-message"></small>
+        
+
+
+
+         <label for="terms"> I agree to the Terms and Privacy Policy</label>
+        <input id ="terms" type="checkbox" >
+
+        <button type="submit">Signup</button>
+        <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+      </form>
+
+    </div>
+</div>
+
+<div id="forgot-modal" class="forgot-modal">
+    <div class="forgot-box">
+        <button type="button" id="close-forgot" aria-label="Close">&times;</button>
+
+        <h2>Forgot Password?</h2>
+        <p>Enter your email address to reset your password.</p>
+
+        <form id="forgot-form">
+            <label for="forgot-email">Email Address</label>
+            <input
+                type="email"
+                id="forgot-email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <small id="forgot-message"></small>
+
+            <button type="submit">Reset Password</button>
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

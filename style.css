@@ -1,0 +1,318 @@
+:root {
+    --bg-color: #e8edf5;
+    --accent-color: #4285f4;
+    --text-color: #2e3a4b;
+    --shadow-dark: #c5ccd8;
+    --shadow-light: #ffffff;
+    --font-family: 'Nunito', sans-serif;
+}
+body {
+    
+    font-family: Nunito, sans-serif;
+    background-color:#e8edf5;
+    display:flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+   background-color: var(--bg-color);
+    padding:30px;
+    border-radius:20px;
+   box-shadow: 8px 8px 16px var(--shadow-dark),
+            -8px -8px 16px var(--shadow-light);
+    width:350px ;
+
+}
+
+
+/* Normal input boxes */
+input:not([type="checkbox"]):not([type="radio"]) {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #e8edf5;
+    box-shadow: inset 4px 4px 8px #c5ccd8,
+                inset -4px -4px 8px #ffffff;
+    font-family: Nunito, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+/* Click karne par blue border */
+input:not([type="checkbox"]):not([type="radio"]):focus {
+    border: 1px solid #4285f4;
+    outline: none;
+}
+
+button{
+    padding:10px 18px;
+    background-color: #e8edf5;
+    border:none;
+    border-radius: 10px;
+    box-shadow:8px 8px 16px #c5ccd8,
+            -8px -8px 16px #ffffff;
+    font-family:  Nunito, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover{
+    color: #4285f4;
+}
+
+button:active {
+    box-shadow: inset 4px 4px 8px #c5ccd8,
+                inset -4px -4px 8px #ffffff;
+}
+
+#signup-form{
+    display: block;
+}
+
+.password-input-wrapper{
+    position:relative;
+    width:100%;
+}
+
+.password-input-wrapper input{
+    padding-right: 45px;
+}
+
+.password-input-wrapper button{
+    position: absolute;
+    right: 8px;
+    top:50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.password-input-wrapper button:hover {
+    color: #4285f4;
+}
+
+.password-strength{
+    margin: 4px 0 12px;
+    display: none;
+}
+
+.strength-bar{
+    width: 100%;
+    height: 6px;
+    background-color: #d5dce8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.strength-fill{
+    width: 25%;
+    height: 100%;
+    background-color: #e74c3c;
+    border-radius: 10px;
+   transition: width 0.3s ease, background-color 0.3s ease;
+}
+.password-strength small{
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 12px;
+}
+.error-message{
+    display: none;
+    color: red;
+}
+/*slide animation*/
+
+
+.forms-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+}
+
+.forms-wrapper form {
+    grid-area: 1 / 1;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    transition: transform 0.4s ease;
+}
+
+#login-form {
+    transform: translateX(0);
+}
+
+#signup-form {
+    transform: translateX(100%);
+}
+.heading {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 6px;
+    border-radius: 12px;
+    background: #e8edf5;
+    box-shadow: inset 4px 4px 8px #c5ccd8,
+                inset -4px -4px 8px #ffffff;
+}
+
+.heading button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #e8edf5;
+    color: #444;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px #c5ccd8,
+                -4px -4px 8px #ffffff;
+}
+
+.heading button:active {
+    box-shadow: inset 3px 3px 6px #c5ccd8,
+                inset -3px -3px 6px #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: calc(100% - 32px);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .forms-wrapper {
+        width: 100%;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        font-size: 14px;
+    }
+}
+
+/* Forgot Password Popup */
+.forgot-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.forgot-modal.show {
+    display: flex;
+}
+
+.forgot-box {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    padding: 24px;
+    border-radius: 20px;
+    background: #e8edf5;
+    box-shadow: 8px 8px 16px #c5ccd8,
+                -8px -8px 16px #ffffff;
+}
+
+#close-forgot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+#forgot-message {
+    display: block;
+    margin-top: 8px;
+    color: #d33;
+    font-size: 12px;
+}
+
+/* Forgot Password Form Styling */
+.forgot-box h2 {
+    margin-bottom: 10px;
+    color: #2e3a4b;
+}
+
+.forgot-box p {
+    font-size: 14px;
+    color: #667085;
+    line-height: 1.5;
+}
+
+.forgot-box label {
+    display: block;
+    margin: 16px 0 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.forgot-box input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #e8edf5;
+    box-shadow: inset 4px 4px 8px #c5ccd8,
+                inset -4px -4px 8px #ffffff;
+}
+
+.forgot-box input[type="email"]:focus {
+    box-shadow: inset 4px 4px 8px #c5ccd8,
+                inset -4px -4px 8px #ffffff,
+                0 0 0 2px #8bdcc8;
+}
+
+.forgot-box form button[type="submit"] {
+    width: 100%;
+    margin-top: 16px;
+}
+/* Tablet responsive design */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: min(420px, calc(100% - 40px));
+        box-sizing: border-box;
+    }
+
+    .forms-wrapper {
+        width: 100%;
+    }
+}
+
+/* Prevent horizontal overflow */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+}
+.brand-logo {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.container h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
