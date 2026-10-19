@@ -7,23 +7,27 @@
     --font-family: 'Nunito', sans-serif;
 }
 body {
-    
     font-family: Nunito, sans-serif;
-    background-color:#e8edf5;
-    display:flex;
+    background-color: #e8edf5;
+    display: flex;
     min-height: 100vh;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 50px 16px 30px;
 }
 
-.container{
-   background-color: var(--bg-color);
-    padding:30px;
-    border-radius:20px;
-   box-shadow: 8px 8px 16px var(--shadow-dark),
-            -8px -8px 16px var(--shadow-light);
-    width:350px ;
-
+.container {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+    width: 100%;
+    max-width: 430px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 
@@ -61,6 +65,15 @@ button{
     font-size: 15px;
     cursor: pointer;
     transition: 0.2s;
+}
+
+#login-form button[type="submit"],
+#signup-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #2e3a4b;
 }
 button:hover{
     color: #4285f4;
@@ -296,23 +309,84 @@ button:active {
     }
 }
 
-/* Prevent horizontal overflow */
-* {
-    box-sizing: border-box;
+.brand-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap:wrap;
 }
 
-body {
-    margin: 0;
-    padding: 16px;
-}
 .brand-logo {
-    display: inline-flex;
-    vertical-align: middle;
-    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.container h1 {
-    display: inline-block;
-    vertical-align: middle;
+.brand-heading h1 {
     margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+.remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 8px 0;
+    flex-wrap: wrap;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.remember-forgot input[type="checkbox"] {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.remember-forgot a {
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.social-divider {
+    margin: 18px 0 12px;
+    color: #667085;
+}
+
+.social-divider span {
+    display: block;
+}
+
+#login-form > button[type="submit"],
+#signup-form > button[type="submit"] {
+    margin-bottom: 8px;
+}
+
+#login-form .social-divider,
+#signup-form .social-divider {
+    margin-top: 16px;
+}
+
+.social-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 14px;
+    color: #667085;
+    font-size: 14px;
+}
+
+.social-divider::before,
+.social-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #c5ccd8;
 }
